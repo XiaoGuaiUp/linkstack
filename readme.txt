@@ -4,3 +4,7 @@
 有个bug：
     收到 SIGABRT 信号
     *** glibc detected *** ./1: free(): invalid pointer错误
+
+
+修改bug：
+    LinkStackTop()函数中，修改了"value=&(head->data);"
