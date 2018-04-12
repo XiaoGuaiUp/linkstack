@@ -63,7 +63,9 @@ int LinkStackTop(LinkNode* head,LinkStackType* value)
     {
         return 0;
     }
-    *value=head->data;
+    
+    value=&(head->data);
+    printf("取到的栈顶元素是：%c \n",*value);
     return 1;
 }
 
@@ -98,10 +100,9 @@ void Test()
     LinkStackPop(&head);
     LinkPrintChar(head,"再出栈一个元素");
 
-    LinkStackType* value;
+    LinkStackType* value=NULL;
     int ret=LinkStackTop(head,value);
     printf("返回值期望是1，实际是：[ %d ]\n",ret);
-    printf("取栈顶元素期望是b,实际是：[ %c ]\n",*value);
 }
 
 void main()
